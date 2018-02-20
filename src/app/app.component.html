@@ -1,4 +1,4 @@
-<div class="col-xs-8 col-xs-offset-2">
+<div class="col-md-12">
   <p>car name</p>
   <input type="text" class="form-control" [(ngModel)]="carName">
   <p>car color</p>
@@ -15,6 +15,7 @@
       {{car.name}}
       ({{car.color}})
       <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Change color</button>
+      <button class="btn btn-xs btn-danger" (click)="deleteCar(car)">Delete car</button>
     </li>
   </ul>
 </div>
