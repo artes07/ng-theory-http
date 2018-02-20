@@ -12,4 +12,16 @@ export class CarsService {
         return response.json();
       });
   }
+
+  addCar(carName: string, carColor: string) {
+    const data = {
+      name: carName,
+      color: carColor
+    };
+    return this.http.post('http://localhost:3000/cars', data)
+      .map((response: Response) => {
+        return response.json();
+      });
+  }
+
 }
