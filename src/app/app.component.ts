@@ -43,4 +43,15 @@ export class AppComponent {
     this.carName = '';
     this.carColor = '';
   }
+
+  getRandColor() {
+    const num = Math.round(Math.random() * (this.colors.length - 1));
+    return this.colors[num];
+  }
+
+  setNewColor(car: Cars) {
+    this.carsServices.changeColor(car, this.getRandColor())
+      .subscribe((data) => {});
+  }
+
 }
