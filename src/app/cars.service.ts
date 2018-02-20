@@ -1,6 +1,7 @@
 
 import {Injectable} from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class CarsService {
@@ -10,11 +11,15 @@ export class CarsService {
     const headers = new Headers({
       'Content-Type': 'application/json; charset=utf8'
     });
-    return this.http.get('http://localhost:3000/cars', {
-      headers: headers
-    })
+    return this.http
+      .get('http://localhost:3100/cars', {
+        headers: headers
+      })
       .map((response: Response) => {
         return response.json();
+      })
+      .catch((error: Response) => {
+        return Observable.throw('Server not response. Try later');
       });
   }
 
