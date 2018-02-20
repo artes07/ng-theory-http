@@ -5,11 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  cars = [
-    {
-      name: 'Ford',
-      color: 'white',
-      id: 1
-    }
-  ];
+  cars = [];
 }
